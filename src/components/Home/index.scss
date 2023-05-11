@@ -8,39 +8,78 @@
     width: 40%;
     max-height: 90%;
 
-    &::before {
-      content: '<h1>';
-      font-family: 'La Belle Aurore';
-      color: #ffd700;
-      font-size: 18px;
-      position: absolute;
-      margin-top: -40px;
-      left: 15px;
-      opacity: 0.6;
+    h1 {
+      color: #fff;
+      font-size: 56px;
+      line-height: 53px;
+      margin: 0;
+      font-family: 'Coolvetica';
+      font-weight: 400;
+
+      &::before {
+        content: '<h1>';
+        font-family: 'La Belle Aurore';
+        color: #ffd700;
+        font-size: 18px;
+        position: absolute;
+        margin-top: -40px;
+        left: -15px;
+        opacity: 0.6;
+      }
+
+      &::after {
+        content: '</h1>';
+        font-family: 'La Belle Aurore';
+        color: #ffd700;
+        font-size: 18px;
+        position: absolute;
+        margin-top: 50px;
+        left: -15px;
+        animation: fadeIn 1s 1.7s backwards;
+        opacity: 0.6;
+      }
+
+      img {
+        width: 32px;
+        height: auto;
+        margin-left: 20px;
+        opacity: 0;
+        animation: rotateIn 1s linear both;
+        animation-delay: 1.4s;
+      }
     }
 
-    &::after {
-      content: '</h1>';
-      font-family: 'La Belle Aurore';
+    h2 {
+      margin-top: 40px;
+      color: #8d8d8d;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      animation: fadeIn 1s 1.8s backwards;
+    }
+
+    .flat-button {
       color: #ffd700;
-      font-size: 18px;
-      position: absolute;
-      margin-top: 18px;
-      left: 15px;
-      animation: fadeIn 1s 1.7s backwards;
-      opacity: 0.6;
+      font-family: sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 1px solid #ffd700;
+      margin-top: 25px;
+      border-radius: 10px;
+      float: left;
+      animation: fadeIn 1s 1.8 backwards;
+      white-space: nowrap;
+      transition: all ease .3s;
+
+      &:hover {
+        background-color: #ffd700;
+        color: #333;
+      }
     }
   }
 
-  h1 {
-    color: #fff;
-    font-size: 53px;
-    margin: 0;
-    font-family: 'Coolvetica';
-    font-weight: 400;
 
-    img {
-      width: 32px;
-    }
-  }
 }
