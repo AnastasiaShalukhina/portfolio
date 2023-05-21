@@ -6,9 +6,7 @@ import {
   faHome,
   faUser,
   faEnvelope,
-  faSuitcase,
-  faBars,
-  faClose,
+
 
 } from '@fortawesome/free-solid-svg-icons';
 import {

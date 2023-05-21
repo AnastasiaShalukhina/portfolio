@@ -28,7 +28,7 @@ const Logo = () => {
         },
           {
             opacity: 1,
-            delay: 1,
+            delay: 0,
             duration: 4,
           }
         )
