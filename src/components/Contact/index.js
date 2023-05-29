@@ -1,11 +1,14 @@
 import Loader from 'react-loaders';
 import './index.scss';
 import AnimatedLetters from '../AnimatedLetters';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 
   const [letterClass, setLetterClass] = useState('text-animate');
+  const refForm = useRef(null);
+
   useEffect(() => {
     const idTimeOut = setTimeout(() => {
       setLetterClass('text-animate-hover')
@@ -14,7 +17,24 @@ const Contact = () => {
     return () => clearTimeout(idTimeOut);
   }, [])
 
+  const sendEmal = (e) => {
+    e.preventDefault();
 
+    emailjs
+      .sendForm(
+        'service_z3sbocn',
+        'template_mec0j1e',
+        refForm.current,
+        '9vwU28RJX5ih6NIi1')
+      .then((result) => {
+        alert('Message successfully sent!');
+        window.location.reload(false);
+      }, (error) => {
+        console.log(error.text);
+        alert('Failed to send the message, please try again later')
+      });
+
+  }
   return (
     <>
       <div className='container contact-page'>
@@ -32,7 +52,7 @@ const Contact = () => {
             questions, don't hesitate to contact me using below form either.
           </p>
           <div className='contact-form'>
-            <form>
+            <form ref={refForm} onSubmit={sendEmal}>
               <ul>
                 <li className='half'>
                   <input type='text' name='name' placeholder='Name' required />
